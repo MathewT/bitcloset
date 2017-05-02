@@ -88,9 +88,11 @@ var userController = {
 
     this.uiElements.profileButton.click(function(e) {
       var url = that.data.config.apiBaseUrl + '/user-profile';
+      console.log("uiElement.profileButton clicked", url);
 
       $.get(url, function(data, status) {
         $('#user-profile-raw-json').text(JSON.stringify(data, null, 2));
+        console.log("user data: ", JSON.stringify(data, null, 2));
         $('#user-profile-modal').modal();
       })
     });
